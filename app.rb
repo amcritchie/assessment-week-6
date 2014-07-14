@@ -24,4 +24,16 @@ class App < Sinatra::Application
     # end
     erb :root#, :locals => {:send => @string}
   end
+
+  post "/search" do
+    if set_of_parks == "two"
+
+    end
+  end
+
+  post "/add" do
+    @database_connection.sql("INSERT INTO parks (id, name, state, country) VALUES ('#{params[:id]}', '#{params[:name]}','#{params[:state]}', '#{params[:country]}')")
+    redirect "/"
+  end
 end
+
