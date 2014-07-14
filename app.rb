@@ -13,15 +13,15 @@ class App < Sinatra::Application
   end
 
   get "/" do
-    @string = "SELECT username,id FROM users"
-    if session[:user_id]
-      puts "We still have a session id #{session[:id]}"
-    end
-    if params[:order] == "asc"
-      @string += " ORDER BY username ASC"
-    elsif params[:order] == "desc"
-      @string += " ORDER BY username DESC"
-    end
-    erb :root, :locals => {:send => @string}
+    # @string = "SELECT username,id FROM users"
+    # if session[:user_id]
+    #   puts "We still have a session id #{session[:id]}"
+    # end
+    # if params[:order] == "asc"
+    #   @string += " ORDER BY username ASC"
+    # elsif params[:order] == "desc"
+    #   @string += " ORDER BY username DESC"
+    # end
+    erb :root#, :locals => {:send => @string}
   end
 end
